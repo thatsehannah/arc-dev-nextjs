@@ -136,7 +136,10 @@ const Websites = (props) => {
                 props.setSelectedIndex(0);
               }}
             >
-              <img alt="forward to Services page" src="/assets/forward.svg" />
+              <img
+                alt="forward to Services page"
+                src="/assets/forwardArrow.svg"
+              />
             </IconButton>
           </Grid>
         </Hidden>

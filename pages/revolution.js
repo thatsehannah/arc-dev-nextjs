@@ -475,8 +475,8 @@ const Revolution = (props) => {
           <img
             src="/assets/reviewIcon.svg"
             alt="magnifying glass"
-            style={{ maxWidth: 700 }}
             width="100%"
+            style={{ maxWidth: "40em" }}
           />
         </Grid>
       </Grid>
@@ -534,7 +534,7 @@ const Revolution = (props) => {
             src="/assets/designIcon.svg"
             alt="paintbrush"
             width="100%"
-            style={{ maxWidth: 1000 }}
+            style={{ maxWidth: '50em' }}
           />
         </Grid>
       </Grid>
@@ -589,8 +589,8 @@ const Revolution = (props) => {
           <img
             src="/assets/reviewIcon.svg"
             alt="magnifying glass"
-            style={{ maxWidth: 700 }}
             width="100%"
+            style={{ maxWidth: "40em" }}
           />
         </Grid>
       </Grid>
@@ -752,6 +752,7 @@ const Revolution = (props) => {
             src="/assets/launchIcon.svg"
             alt="rocket blasting off"
             width="100%"
+            style={{maxWidth: '15em'}}
           />
         </Grid>
       </Grid>
@@ -817,7 +818,7 @@ const Revolution = (props) => {
             src="/assets/maintainIcon.svg"
             alt="wrench tightening bolts"
             width="100%"
-            style={{ maxWidth: 500 }}
+            style={{ maxWidth: '23em' }}
           />
         </Grid>
       </Grid>

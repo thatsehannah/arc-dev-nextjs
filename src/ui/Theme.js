@@ -27,7 +27,7 @@ const theme = createMuiTheme({
     },
     estimate: {
       fontFamily: "Pacifico",
-      fontSize: "1.2rem",
+      fontSize: "1rem",
       textTransform: "none",
       color: "white",
     },
