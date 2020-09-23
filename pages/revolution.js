@@ -752,7 +752,7 @@ const Revolution = (props) => {
             src="/assets/launchIcon.svg"
             alt="rocket blasting off"
             width="100%"
-            style={{ maxWidth: "40em", maxHeight: matchesSM ? '40em' : '60em' }}
+            style={{ maxWidth: matchesSM ? '42em' : "15em", maxHeight: matchesSM ? '42em' : '70em' }}
           />
         </Grid>
       </Grid>
