@@ -33,6 +33,7 @@ const Revolution = (props) => {
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
   const matchesMD = useMediaQuery(theme.breakpoints.down("md"));
+  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
   const defaultOptions = {
     loop: true,
@@ -44,7 +45,7 @@ const Revolution = (props) => {
   };
 
   return (
-    <Grid container direction="column">
+    <Grid container direction="column" style={{width: '100%'}}>
       <Head>
         <title key="title">
           The Revolution - Cutting-Edge Software | Arc Development
@@ -296,7 +297,7 @@ const Revolution = (props) => {
             <Typography
               align={matchesMD ? "center" : undefined}
               variant="h4"
-              style={{ color: "#000000", marginTop: "5em" }}
+              style={{ color: "#000000", marginTop: "5em"  }}
               gutterBottom
             >
               Consultation
@@ -622,7 +623,7 @@ const Revolution = (props) => {
           <Grid item>
             <Typography
               variant="body1"
-              style={{ color: "#ffffff", maxWidth: "20em" }}
+              style={{ color: "#ffffff", maxWidth: "20em", fontSize: matchesSM ? '1.1em' : undefined }}
               align={matchesMD ? "center" : undefined}
               paragraph
             >
@@ -630,7 +631,7 @@ const Revolution = (props) => {
             </Typography>
             <Typography
               variant="body1"
-              style={{ color: "#ffffff", maxWidth: "20em" }}
+              style={{ color: "#ffffff", maxWidth: "20em", fontSize: matchesSM ? '1.1em' : undefined }}
               align={matchesMD ? "center" : undefined}
               paragraph
             >
@@ -640,7 +641,7 @@ const Revolution = (props) => {
             </Typography>
             <Typography
               variant="body1"
-              style={{ color: "#ffffff", maxWidth: "20em" }}
+              style={{ color: "#ffffff", maxWidth: "20em", fontSize: matchesSM ? '1.1em' : undefined }}
               align={matchesMD ? "center" : undefined}
               paragraph
             >
@@ -649,7 +650,7 @@ const Revolution = (props) => {
             </Typography>
             <Typography
               variant="body1"
-              style={{ color: "#ffffff", maxWidth: "20em" }}
+              style={{ color: "#ffffff", maxWidth: "20em", fontSize: matchesSM ? '1.1em' : undefined }}
               align={matchesMD ? "center" : undefined}
               paragraph
             >
@@ -659,7 +660,7 @@ const Revolution = (props) => {
             </Typography>
             <Typography
               variant="body1"
-              style={{ color: "#ffffff", maxWidth: "20em" }}
+              style={{ color: "#ffffff", maxWidth: "20em", fontSize: matchesSM ? '1.1em' : undefined }}
               align={matchesMD ? "center" : undefined}
               paragraph
             >
@@ -669,7 +670,7 @@ const Revolution = (props) => {
             </Typography>
             <Typography
               variant="body1"
-              style={{ color: "#ffffff", maxWidth: "20em" }}
+              style={{ color: "#ffffff", maxWidth: "20em", fontSize: matchesSM ? '1.1em' : undefined }}
               align={matchesMD ? "center" : undefined}
               paragraph
             >
@@ -685,7 +686,7 @@ const Revolution = (props) => {
             src="/assets/buildIcon.svg"
             alt="building construction site"
             width="100%"
-            style={{ maxWidth: matchesMD ? 700 : 1000 }}
+            style={{ maxWidth: matchesSM ? "30em" : "40em" }}
           />
         </Grid>
       </Grid>
@@ -752,7 +753,7 @@ const Revolution = (props) => {
             src="/assets/launchIcon.svg"
             alt="rocket blasting off"
             width="100%"
-            style={{maxWidth: '15em'}}
+            style={{ maxWidth: "40em", maxHeight: matchesSM ? '40em' : '60em' }}
           />
         </Grid>
       </Grid>
