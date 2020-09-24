@@ -1,4 +1,5 @@
 import React, { Fragment, useState } from "react";
+import ReactGA from "react-ga";
 import Head from "next/head";
 import axios from "axios";
 import { cloneDeep } from "lodash";
@@ -558,6 +559,10 @@ const Estimate = (props) => {
 
   const sendEstimate = () => {
     setLoading(true);
+    ReactGA.event({
+      category: "Estimate",
+      action: "Estimate Sent",
+    });
     axios
       .get(
         "https://us-central1-material-ui-course-41153.cloudfunctions.net/sendMail",
@@ -623,23 +628,6 @@ const Estimate = (props) => {
 
   const softwareSelection = (
     <Grid container direction="column">
-      <Head>
-        <title key="title">
-          Free Custom Software Estimate | Arc Development
-        </title>
-        <meta
-          name="description"
-          key="description"
-          content="Use our free online estimate calculator to instantly check the cost of your custom software, mobile app, or website design and development project!"
-        />
-        <meta
-          property="og:title"
-          key="og:title"
-          content="Bringing West Coast Technology to the Midwest | Free Estimate"
-        />
-        <meta property="og:url" key="og:url" content="arc.com/estimate" />
-        <link rel="canonical" key="canonical" href="arc.com/estimate" />
-      </Head>
       <Grid
         item
         container
@@ -721,7 +709,7 @@ const Estimate = (props) => {
         </Grid>
       </Grid>
       <Grid item container alignItems="center">
-        <Grid itemw xs={2}>
+        <Grid item xs={2}>
           <img src="/assets/check.svg" alt="checkmark" />
         </Grid>
         <Grid item xs={10}>
@@ -761,6 +749,23 @@ const Estimate = (props) => {
 
   return (
     <Grid container direction="row">
+      <Head>
+        <title key="title">
+          Free Custom Software Estimate | Arc Development
+        </title>
+        <meta
+          name="description"
+          key="description"
+          content="Use our free online estimate calculator to instantly check the cost of your custom software, mobile app, or website design and development project!"
+        />
+        <meta
+          property="og:title"
+          key="og:title"
+          content="Bringing West Coast Technology to the Midwest | Free Estimate"
+        />
+        <meta property="og:url" key="og:url" content="arc.com/estimate" />
+        <link rel="canonical" key="canonical" href="arc.com/estimate" />
+      </Head>
       {/*----Left side of page----*/}
       <Grid
         item
@@ -919,6 +924,10 @@ const Estimate = (props) => {
               getFeatures();
               getCustomFeatures();
               getCategory();
+              ReactGA.event({
+                category: "Estimate",
+                action: "Estimate Checked",
+              });
             }}
             className={classes.estimateButton}
           >

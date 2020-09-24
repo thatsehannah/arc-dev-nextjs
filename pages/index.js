@@ -1,4 +1,5 @@
 import React from "react";
+import ReactGA from "react-ga";
 import Head from "next/head";
 import Lottie from "react-lottie";
 import { makeStyles, useTheme } from "@material-ui/styles";
@@ -177,7 +178,13 @@ const LandingPage = (props) => {
             >
               <Grid item>
                 <Button
-                  onClick={() => props.setValue(5)}
+                  onClick={() => {
+                    ReactGA.event({
+                      category: "Estimate",
+                      action: "Home Page Pressed",
+                    });
+                    props.setValue(5);
+                  }}
                   component={Link}
                   href="/estimate"
                   className={classes.estimateButton}

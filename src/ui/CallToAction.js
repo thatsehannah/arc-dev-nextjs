@@ -1,4 +1,5 @@
 import React from "react";
+import ReactGA from "react-ga";
 import {
   Grid,
   Typography,
@@ -9,7 +10,6 @@ import {
 } from "@material-ui/core";
 import ButtonArrow from "./ButtonArrow";
 import Link from "../../src/Link";
-import { urlObjectKeys } from "next/dist/next-server/lib/utils";
 
 const useStyles = makeStyles((theme) => ({
   learnButton: {
@@ -106,7 +106,13 @@ const CallToAction = (props) => {
           href="/estimate"
           variant="contained"
           className={classes.estimateButton}
-          onClick={() => props.setValue(5)}
+          onClick={() => {
+            ReactGA.event({
+              category: "Estimate",
+              action: "Call To Action Pressed",
+            });
+            props.setValue(5);           
+          }}
         >
           Free Estimate
         </Button>

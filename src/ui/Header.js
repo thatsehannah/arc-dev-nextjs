@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import ReactGA from "react-ga";
 import {
   AppBar,
   Toolbar,
@@ -137,6 +138,8 @@ const Header = (props) => {
   const [anchorEl, setAnchorEl] = useState(null); //state that stores whatever component we clicked on
   const [openMenu, setOpenMenu] = useState(false); //determines the visibility of the menu, so whether or not the menu is displayed on the screen
 
+  const [previousUrl, setPreviousUrl] = useState("");
+
   const handleTabChange = (e, newValue) => {
     props.setValue(newValue);
   };
@@ -194,6 +197,11 @@ const Header = (props) => {
   ];
 
   useEffect(() => {
+    if (previousUrl !== window.location.pathname) {
+      //if the previousUrl is not already set to whatever page we're already on
+      setPreviousUrl(window.location.pathname);
+      ReactGA.pageview(window.location.pathname + window.location.search);
+    }
     [...menuOptions, ...routes].forEach((route) => {
       switch (window.location.pathname) {
         case `${route.link}`:
@@ -246,7 +254,13 @@ const Header = (props) => {
         variant="contained"
         className={classes.button}
         color="secondary"
-        onClick={() => props.setValue(5)}
+        onClick={() => {
+          props.setValue(5);
+          ReactGA.event({
+            category: "Estimate",
+            action: "Desktop Header Pressed",
+          });
+        }}
       >
         Free Estimate
       </Button>
@@ -317,6 +331,10 @@ const Header = (props) => {
             onClick={() => {
               setOpenDrawer(false);
               props.setValue(5);
+              ReactGA.event({
+                category: "Estimate",
+                action: "Mobile Header Pressed",
+              });
             }}
             divider
             button

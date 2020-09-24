@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactGA from "react-ga";
 import Head from "next/head";
 import axios from "axios";
 import Link from "../src/Link";
@@ -141,6 +142,10 @@ const ContactUs = (props) => {
 
   const onConfirm = () => {
     setLoading(true);
+    ReactGA.event({
+      category: "Message",
+      action: "Message Sent",
+    });
     axios
       .get(
         "https://us-central1-material-ui-course-41153.cloudfunctions.net/sendMail",
@@ -522,7 +527,13 @@ const ContactUs = (props) => {
             href="/estimate"
             variant="contained"
             className={classes.estimateButton}
-            onClick={() => props.setValue(5)}
+            onClick={() => {
+              props.setValue(5);
+              ReactGA.event({
+                category: "Estimate",
+                action: "Contact Page Pressed.",
+              });
+            }}
           >
             Free Estimate
           </Button>
