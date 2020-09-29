@@ -30,6 +30,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       padding: 25,
     },
+    [theme.breakpoints.down("xs")]: {
+      padding: 5,
+    },
   },
   learnButton: {
     ...theme.typography.learnButton,
@@ -46,6 +49,7 @@ const Services = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const matchesSM = useMediaQuery(theme.breakpoints.down("sm"));
+  const matchesXS = useMediaQuery(theme.breakpoints.down("xs"));
 
   return (
     <Grid container direction="column">
@@ -210,7 +214,8 @@ const Services = (props) => {
               Reach More. Discover More. Sell More.
             </Typography>
             <Typography variant="subtitle1">
-              Optimized for Search Engines, built for speed.
+              Optimized for Search Engines, {matchesXS && <br />}built for
+              speed.
             </Typography>
             <Button
               component={Link}

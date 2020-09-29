@@ -134,7 +134,15 @@ const CustomSoftware = (props) => {
         </Hidden>
         <Grid item container direction="column" className={classes.heading}>
           <Grid item>
-            <Typography align={matchesMD ? "center" : undefined} variant="h1">
+            <Typography
+              align={matchesMD ? "center" : undefined}
+              variant="h1"
+              style={{
+                lineHeight: matchesXS && 1.1,
+                marginBottom: matchesXS && "0.5em",
+                fontSize: "2.25em",
+              }}
+            >
               Custom Software Development
             </Typography>
           </Grid>
@@ -313,7 +321,7 @@ const CustomSoftware = (props) => {
               </Typography>
             </Grid>
           </Grid>
-          <Grid item md>
+          <Grid item md style={{ marginTop: matchesSM && "2em" }}>
             <Lottie
               options={documentsOptions}
               isStopped={false}
@@ -328,7 +336,7 @@ const CustomSoftware = (props) => {
           direction={matchesSM ? "column" : "row"}
           md
         >
-          <Grid item md>
+          <Grid item md style={{ marginBottom: matchesSM && "2em" }}>
             <Lottie
               options={scaleOptions}
               style={{ maxWidth: 280, maxHeight: 260 }}
@@ -440,7 +448,7 @@ const CustomSoftware = (props) => {
               </Typography>
             </Grid>
           </Grid>
-          <Grid item md>
+          <Grid item md style={{ marginTop: matchesSM && "2em" }} >
             <Lottie
               options={automationOptions}
               isStopped={false}
@@ -455,7 +463,7 @@ const CustomSoftware = (props) => {
           direction={matchesSM ? "column" : "row"}
           md
         >
-          <Grid item md>
+          <Grid item md style={{ marginBottom: matchesSm && "2em" }}>
             <Lottie
               options={uxOptions}
               style={{ maxWidth: 155, maxHeight: 310 }}
