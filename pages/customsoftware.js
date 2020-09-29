@@ -463,7 +463,7 @@ const CustomSoftware = (props) => {
           direction={matchesSM ? "column" : "row"}
           md
         >
-          <Grid item md style={{ marginBottom: matchesSm && "2em" }}>
+          <Grid item md style={{ marginBottom: matchesSM && "2em" }}>
             <Lottie
               options={uxOptions}
               style={{ maxWidth: 155, maxHeight: 310 }}
